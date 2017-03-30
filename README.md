@@ -1,24 +1,27 @@
-##‘API DAYS : A comparison of REST APIs 
+## ‘API DAYS : A comparison of REST APIs 
 ### GopherConAE 2016 talk
 ### Preet Singh
 
-This repository contains code and slides from my GopherConAE 2016 talk. I presented a performance comparison between REST APIs in 3 tech stacks: Python + Tornado, Golang +net/http, Java+SpringBoot. Golang was by far the fastest on simple requests, running twice as many requests as Java, and handled nearly fifteen times the requests handled by Python. When deciding between different tech stacks in your web app architecture, this comparison and code can serve as a start point to compare the performance of different tech stacks. 
+This repository contains code and slides from my GopherConAE 2016 talk. I presented a performance comparison between REST APIs in 3 tech stacks: Python + Tornado, Golang +net/http, Java+SpringBoot. When deciding between different tech stacks in your web app architecture, this comparison and code can serve as a start point to compare the performance of different tech stacks. 
+
 #### Note : This uses Golang 1.4.2 . Ver 1.6+ has major changes. 
 
+
+Golang was by far the fastest on simple requests, running twice as many requests as Java, and handled nearly fifteen times the requests handled by Python. 
+
+#### Simple request metrics
 ![Simple Request metrics](images/simple_request.png)
-
-
-
 
 
 Performance details with database requests was less clear. 
 
+#### Database request metrics:
 ![Database Request metrics](images/db_request.png)
 
 
 Java performed best, but it was clear there were multiple factors in play: SpringBoot seemed to be doing a version of connection caching, creating a much larger footprint. Golang’s connection pooling philosophy by contrast, minimizes the resource footprint, placing a limitation on the maximum number of connections in the pool, rather than allow a minimum:  
 
-
+#### Connection parameters
 ![Max Connections](images/max_conn.png)
  
 
