@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: restapi0_java.Restapi0JavaApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.351 sec - in restapi0_java.Restapi0JavaApplicationTests
